@@ -1,9 +1,32 @@
 [
     {
-        "userId": "",
-        "fundingName": "sample funding 1",
-        "fundingInfo": "sample funding No.1",
-        "fundingGoal": 1000000,
-        "deadline": "2020-01-27"
+        "owner": "",
+        "fundingName": "해외 응급 구조",
+        "fundingInfo": "해외에서 위급상황시 큰 소리를 울려서 자신이 위험하다는 위험 경보를 울리면서 GPS 정보를 해당 국가 경찰에 보내는 것",
+        "numInvestors": 0,
+        "deadline": "2020-01-27",
+        "status": "true",
+        "goalAmount": 1000000,
+        "totalAmount": 500000
+    },
+    {
+        "owner": "",
+        "fundingName": "월광 케이스",
+        "fundingInfo": "달빛의 은은함이 느껴지는 빛을 발산하여 편안함을 주는 케이스",
+        "numInvestors": 0,
+        "deadline": "2020-02-01",
+        "status": "true",
+        "goalAmount": 1000000,
+        "totalAmount": 500000
+    },
+    {
+        "owner": "",
+        "fundingName": "고양이 장난감",
+        "fundingInfo": "고양이가 정말 좋아하는 엄청난 장난감",
+        "numInvestors": 0,
+        "deadline": "2020-02-015",
+        "status": "true",
+        "goalAmount": 1000000,
+        "totalAmount": 500000
     }
 ]
