@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+ 
+  </head>
+  <body>
+    <h1>fund List</h1>
+    <form action="/funds/adduser" method="POST">
+      <label>이름</label>
+      <input type="text" name="name">
+      <label>ID</label>
+      <input type="text" name="id">
+
+      <label>PW</label>
+      <input type="text" name="pw">
+
+      <input type="submit" value="등록">
+    </form>
+    <table>
+        <tr>
+            <th>이름</th>
+            <th>아이디</th>
+            <th>비밀번호</th>
+
+        </tr>
+        <% fund_list.forEach(el => { %>
+            <tr>
+                <td><%= el.name %></td>
+                <td><%= el.id %></td>
+                <td><%= el.pw %></td>
+            </tr>
+        <% }) %>
+    </table>
+ 
+  </body>
+</html>

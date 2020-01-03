@@ -25,7 +25,7 @@ contract crowd_Funding {
         owner = msg.sender;
         deadline = now + _duration;
         goalAmount = _goalAmount;
-        status = "in progresㅞs...";
+        status = "in progress...";
         ended = false;
         
         numInvestors = 0;
@@ -33,36 +33,38 @@ contract crowd_Funding {
     }
     
     function fund() public payable {
-        require(!ended,"funding is over");  
-
+        require(!ended);
+        
         Investor storage inv = investors[numInvestors++];
         inv.addr = msg.sender;
         inv.amount = msg.value;
         totalAmount += inv.amount;
     }
+    
     function checkGoalReached () public onlyOwner{
-        require(!ended,"funding is over");
-        require(now>=deadline,"deadline is over");
-
+        require(!ended);
+        require(now>=deadline);
+        
         if(totalAmount >= goalAmount) {
             status = "funding success. thank you guys!";
             ended = true;
-            
             if(!owner.send(address(this).balance)){
-                revert("");
+                revert();
             }
         } else {
             uint i = 0;
             status = "funding failed...";
             ended = true;
+            
             while(i <= numInvestors) {
                 if(!investors[i].addr.send(investors[i].amount)){
-                    revert("");
+                    revert();
                 }
                 i++;
             }
         }
     }
+    
     function kill() public onlyOwner {
         selfdestruct(owner);
     }
