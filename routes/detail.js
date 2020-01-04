@@ -2,8 +2,9 @@ var express = require('express');
 var router = express.Router();
 
 /* GET home page. */
-router.get('/fourth', function(req, res, next) {
-  res.render('fourth', { title: 'Express' });
+router.get('/:index', function(req, res, next) {
+  const pageIndex = req.params.index;
+  res.render('./detail/' + pageIndex);
 });
 
 module.exports = router;

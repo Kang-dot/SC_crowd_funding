@@ -20,6 +20,10 @@ router.get('/', function (req, res, next) {
   res.render('index', { fund_list: fund_list });
 });
 
+router.get('/:index', function(req, res, next){
+  const pageIndex = req.params.index;
+  res.render('./detail/' + pageIndex, { fund_list: fund_list });
+})
 /* 
 router.get('/list', function (req, res, next) {
    
