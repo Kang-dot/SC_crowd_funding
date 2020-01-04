@@ -4,40 +4,18 @@
     <h2>SMU 클라우드 펀딩 Main 페이지</h2>
     <p>       </p>
     <div class="row">
+        <% fund_list.forEach(el => { %>
         <div class="col col-md-4">
             <div class="card">
-                <img class="card-img-top" src="/images/help.PNG" alt="Card image" style="width:100%">
+                <img class="card-img-top" src="/images/<%= el.image %>" alt="Card image" style="width:100%">
                 <div class="card-body">
-                    <h4 class="card-title">해외 응급 구조</h4>
-                    <p class="card-text">해외에서 위급상황시 큰 소리를 울려서 자신이 위험하다는 위험 경보를 울리면서 GPS 정보를 해당 국가 경찰에 보내는 것</p>
-                    <a href="/pun" class="btn btn-primary">후원하기</a>
-                </div>
-            </div>
-        </div>
-        <div class="col col-md-4">
-            <div class="card">
-                <img class="card-img-top" src="/images/case.PNG" alt="Card image" style="width:100%">
-                <div class="card-body">
-                    <h4 class="card-title">월광 케이스</h4>
-                    <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
+                    <h4 class="card-title"><%= el.fundingName %></h4>
+                    <p class="card-text"><%= el.fundingInfo %></p>
                     <a href="#" class="btn btn-primary">후원하기</a>
                 </div>
             </div>
         </div>
-        <div class="col col-md-4">
-            <div class="card">
-                <img class="card-img-top" src="/images/cat.PNG" alt="Card image" style="width:100%">
-                <div class="card-body">
-                    <h4 class="card-title">고양이 장난감</h4>
-                    <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-                    <a href="#" class="btn btn-primary">후원하기</a>
-                </div>
-            </div>
-        </div>
-
-
+        <% }) %>
     </div>
-
   </div>
-  
 </div>

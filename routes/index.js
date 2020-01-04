@@ -4,20 +4,20 @@ var router = express.Router();
  
 var fund_list = [];
  
-fs.readFile(__dirname + "/../data/" + "fund.json", 'utf8', function (err, data) {
+fs.readFile(__dirname + "/../data/" + "fundinginfo.json", 'utf8', function (err, data) {
   if (err) {
     console.log(err);
   } else {
  
-    console.log(data);
+    //console.log(data);
     fund_list = JSON.parse(data);
-    console.log(fund_list);
+    //console.log(fund_list);
   }
 });
  
 /* GET users listing. */
 router.get('/', function (req, res, next) {
-  res.render('fundlist', { fund_list: fund_list });
+  res.render('index', { fund_list: fund_list });
 });
 
 /* 

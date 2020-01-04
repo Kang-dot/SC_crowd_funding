@@ -7,7 +7,8 @@
         "deadline": "2020-01-27",
         "status": "true",
         "goalAmount": 1000000,
-        "totalAmount": 500000
+        "totalAmount": 500000,
+        "image": "help.PNG"
     },
     {
         "owner": "",
@@ -17,7 +18,8 @@
         "deadline": "2020-02-01",
         "status": "true",
         "goalAmount": 1000000,
-        "totalAmount": 500000
+        "totalAmount": 500000,
+        "image": "case.PNG"
     },
     {
         "owner": "",
@@ -27,6 +29,29 @@
         "deadline": "2020-02-015",
         "status": "true",
         "goalAmount": 1000000,
-        "totalAmount": 500000
+        "totalAmount": 500000,
+        "image": "cat.PNG"
+    },
+    {
+        "owner": "",
+        "fundingName": "sample data4",
+        "fundingInfo": "sample data No.4",
+        "numInvestors": 0,
+        "deadline": "2020-02-15",
+        "status": "true",
+        "goalAmount": 1000000,
+        "totalAmount": 500000,
+        "image": "pocket.jpg"
+    },
+    {
+        "owner": "",
+        "fundingName": "sample data5",
+        "fundingInfo": "sample data No.5",
+        "numIvestors": 0,
+        "deadline": "2020-03-01",
+        "status": "true",
+        "goalAmount": 500000,
+        "totalAmount": 200000,
+        "image": "ronaldo.PNG"
     }
 ]

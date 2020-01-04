@@ -8,10 +8,7 @@ fs.readFile(__dirname + "/../data/" + "fund.json", 'utf8', function (err, data) 
   if (err) {
     console.log(err);
   } else {
- 
-    console.log(data);
     fund_list = JSON.parse(data);
-    console.log(fund_list);
   }
 });
  
