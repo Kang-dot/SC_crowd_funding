@@ -14,7 +14,7 @@ fs.readFile(__dirname + "/../data/" + "fundinginfo.json", 'utf8', function (err,
  
 /* GET users listing. */
 router.get('/', function (req, res, next) {
-  res.render('index', { fund_list: fund_list });
+  res.render('index', {fund_list: fund_list});
 });
 
 router.get('/:index', function (req, res, next) {

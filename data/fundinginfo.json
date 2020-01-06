@@ -7,6 +7,9 @@
         "numInvestors": 0,
         "deadline": "2020-01-27",
         "status": "true",
+        "helper": [
+
+        ],
         "goalAmount": 1000000,
         "totalAmount": 500000,
         "image": "help.PNG"
@@ -19,6 +22,9 @@
         "numInvestors": 0,
         "deadline": "2020-02-01",
         "status": "true",
+        "helper": [
+
+        ],
         "goalAmount": 1000000,
         "totalAmount": 500000,
         "image": "case.PNG"
@@ -31,6 +37,9 @@
         "numInvestors": 0,
         "deadline": "2020-02-015",
         "status": "true",
+        "helper": [
+
+        ],
         "goalAmount": 1000000,
         "totalAmount": 500000,
         "image": "cat.PNG"
@@ -43,6 +52,9 @@
         "numInvestors": 0,
         "deadline": "2020-02-15",
         "status": "true",
+        "helper": [
+
+        ],
         "goalAmount": 1000000,
         "totalAmount": 500000,
         "image": "umb.jpg"
@@ -54,7 +66,10 @@
         "fundingInfo": "환경파괴를 막고 자연친화적 삶을 살자는 취지에서 만들게 되었습니다",
         "numIvestors": 0,
         "deadline": "2020-03-01",
-        "status": "true",
+        "status": "true", 
+        "helper": [
+
+        ],
         "goalAmount": 500000,
         "totalAmount": 200000,
         "image": "cup.jpg"
@@ -67,6 +82,9 @@
         "numIvestors": 0,
         "deadline": "2020-03-01",
         "status": "true",
+        "helper": [
+
+        ],
         "goalAmount": 500000,
         "totalAmount": 200000,
         "image": "pocket.jpg"

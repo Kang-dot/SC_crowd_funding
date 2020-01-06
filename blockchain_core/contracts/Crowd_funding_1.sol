@@ -32,18 +32,20 @@ contract crowd_Funding {
         totalAmount = 0;
     }
     
-    function fund() public payable {
+    function fund() public payable returns(uint) {
         require(!ended);
         
         Investor storage inv = investors[numInvestors++];
         inv.addr = msg.sender;
         inv.amount = msg.value;
         totalAmount += inv.amount;
+
+        return inv.amount;
     }
     
-    function checkGoalReached () public onlyOwner{
+    function checkGoalReached () public onlyOwner returns (string memory){
         require(!ended);
-        require(now>=deadline);
+        require(now>=deadline, "this funding is still progressing");
         
         if(totalAmount >= goalAmount) {
             status = "funding success. thank you guys!";
@@ -63,6 +65,7 @@ contract crowd_Funding {
                 i++;
             }
         }
+        return status;
     }
     
     function kill() public onlyOwner {
