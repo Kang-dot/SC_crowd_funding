@@ -14,13 +14,15 @@ fs.readFile(__dirname + "/../data/" + "fundinginfo.json", 'utf8', function (err,
  
 /* GET users listing. */
 router.get('/', function (req, res, next) {
-  res.render('index', { fund_list: fund_list });
+  res.render('index', {fund_list: fund_list});
 });
 
-router.get('/:index', function(req, res, next){
-  const pageIndex = req.params.index;
-  res.render('./detail/' + pageIndex, { fund_list: fund_list, index: pageIndex });
-})
+router.get('/:index', function (req, res, next) {
+  var pageIndex = req.params.index;
+  res.redirect('/funds/'+pageIndex);
+});
+
+
 /* 
 router.get('/list', function (req, res, next) {
    

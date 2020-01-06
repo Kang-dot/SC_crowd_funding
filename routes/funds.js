@@ -4,7 +4,7 @@ var router = express.Router();
  
 var fund_list = [];
  
-fs.readFile(__dirname + "/../data/" + "fund.json", 'utf8', function (err, data) {
+fs.readFile(__dirname + "/../data/" + "fundinginfo.json", 'utf8', function (err, data) {
   if (err) {
     console.log(err);
   } else {
@@ -42,5 +42,9 @@ router.post('/adduser', function (req, res, next) {
   res.redirect('/funds/list');
  
 })
- 
+
+router.get('/:index', function(req, res, next){
+  const pageIndex = req.params.index - 1;
+  res.render('detail/info', { fund_item: fund_list[pageIndex], index: pageIndex });
+})
 module.exports = router;
