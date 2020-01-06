@@ -1,10 +1,13 @@
 var fs = require('fs');
 var express = require('express');
 var router = express.Router();
- 
+var crowdfunding = require('../libs/crowdFunding');
+
+const crowdFunding = new crowdfunding();
+
 var fund_list = [];
  
-fs.readFile(__dirname + "/../data/" + "fund.json", 'utf8', function (err, data) {
+fs.readFile(__dirname + "/../data/" + "fundinginfo.json", 'utf8', function (err, data) {
   if (err) {
     console.log(err);
   } else {
@@ -41,6 +44,16 @@ router.post('/adduser', function (req, res, next) {
  
   res.redirect('/funds/list');
  
+})
+
+router.get('/:index', async function(req, res, next){
+  const pageIndex = req.params.index;
+  const goalAmount = await crowdFunding.getGAmount();
+  const totalAmount = await crowdFunding.getTAmount();
+  const deadline = await crowdFunding.getDeadline();
+
+  res.render('./detail/' + pageIndex, { fund_item: fund_list[pageIndex], index: pageIndex, deadline: deadline, totalAmount:totalAmount, goalAmount: goalAmount });
+
 })
  
 module.exports = router;
