@@ -38,7 +38,7 @@
     {
         "index": 4,
         "owner": "",
-        "fundingName": "sample data4",
+        "fundingName": "sample data 4",
         "fundingInfo": "sample data No.4",
         "numInvestors": 0,
         "deadline": "2020-02-15",
@@ -50,8 +50,20 @@
     {
         "index": 5,
         "owner": "",
-        "fundingName": "sample data5",
+        "fundingName": "sample data 5",
         "fundingInfo": "sample data No.5",
+        "numIvestors": 0,
+        "deadline": "2020-03-01",
+        "status": "true",
+        "goalAmount": 500000,
+        "totalAmount": 200000,
+        "image": "ronaldo.PNG"
+    },
+    {
+        "index": 5,
+        "owner": "",
+        "fundingName": "sample data 6",
+        "fundingInfo": "sample data No.6",
         "numIvestors": 0,
         "deadline": "2020-03-01",
         "status": "true",
