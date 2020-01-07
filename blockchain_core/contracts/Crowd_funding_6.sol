@@ -1,6 +1,6 @@
 pragma solidity ^0.5.11;
 
-contract crowd_Funding {
+contract crowd_Funding_6 {
     struct Investor {
         address payable addr;
         uint amount;

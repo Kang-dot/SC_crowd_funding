@@ -1,5 +1,5 @@
-const Migrations = artifacts.require("Crowd_funding_3");
+const funding3 = artifacts.require("crowd_Funding_3");
 
 module.exports = function(deployer) {
-  deployer.deploy(Migrations, 123123, 456456456);
+  deployer.deploy(funding3, 3333333333, 333333333333333);
 };

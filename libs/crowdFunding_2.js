@@ -2,6 +2,7 @@ var Web3 = require('web3');
 var web3 = new Web3(new Web3.providers.HttpProvider("http://127.0.0.1:8545"));
 
 var contract_abi = [
+
     {
         "constant": false,
         "inputs": [],
@@ -9,56 +10,6 @@ var contract_abi = [
         "outputs": [],
         "payable": false,
         "stateMutability": "nonpayable",
-        "type": "function"
-    },
-    {
-        "constant": false,
-        "inputs": [],
-        "name": "fund",
-        "outputs": [],
-        "payable": true,
-        "stateMutability": "payable",
-        "type": "function"
-    },
-    {
-        "constant": false,
-        "inputs": [],
-        "name": "kill",
-        "outputs": [],
-        "payable": false,
-        "stateMutability": "nonpayable",
-        "type": "function"
-    },
-    {
-        "inputs": [
-            {
-                "internalType": "uint256",
-                "name": "_duration",
-                "type": "uint256"
-            },
-            {
-                "internalType": "uint256",
-                "name": "_goalAmount",
-                "type": "uint256"
-            }
-        ],
-        "payable": false,
-        "stateMutability": "nonpayable",
-        "type": "constructor"
-    },
-    {
-        "constant": true,
-        "inputs": [],
-        "name": "deadline",
-        "outputs": [
-            {
-                "internalType": "uint256",
-                "name": "",
-                "type": "uint256"
-            }
-        ],
-        "payable": false,
-        "stateMutability": "view",
         "type": "function"
     },
     {
@@ -79,7 +30,82 @@ var contract_abi = [
     {
         "constant": true,
         "inputs": [],
+        "name": "numInvestors",
+        "outputs": [
+            {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "constant": true,
+        "inputs": [],
+        "name": "returnGoalAmount",
+        "outputs": [
+            {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "constant": true,
+        "inputs": [],
+        "name": "totalAmount",
+        "outputs": [
+            {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "constant": true,
+        "inputs": [],
+        "name": "status",
+        "outputs": [
+            {
+                "internalType": "string",
+                "name": "",
+                "type": "string"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "constant": true,
+        "inputs": [],
         "name": "goalAmount",
+        "outputs": [
+            {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "constant": true,
+        "inputs": [],
+        "name": "deadline",
         "outputs": [
             {
                 "internalType": "uint256",
@@ -118,9 +144,18 @@ var contract_abi = [
         "type": "function"
     },
     {
+        "constant": false,
+        "inputs": [],
+        "name": "kill",
+        "outputs": [],
+        "payable": false,
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
         "constant": true,
         "inputs": [],
-        "name": "numInvestors",
+        "name": "returnDeadline",
         "outputs": [
             {
                 "internalType": "uint256",
@@ -148,33 +183,12 @@ var contract_abi = [
         "type": "function"
     },
     {
-        "constant": true,
+        "constant": false,
         "inputs": [],
-        "name": "returnDeadline",
-        "outputs": [
-            {
-                "internalType": "uint256",
-                "name": "",
-                "type": "uint256"
-            }
-        ],
-        "payable": false,
-        "stateMutability": "view",
-        "type": "function"
-    },
-    {
-        "constant": true,
-        "inputs": [],
-        "name": "returnGoalAmount",
-        "outputs": [
-            {
-                "internalType": "uint256",
-                "name": "",
-                "type": "uint256"
-            }
-        ],
-        "payable": false,
-        "stateMutability": "view",
+        "name": "fund",
+        "outputs": [],
+        "payable": true,
+        "stateMutability": "payable",
         "type": "function"
     },
     {
@@ -193,39 +207,26 @@ var contract_abi = [
         "type": "function"
     },
     {
-        "constant": true,
-        "inputs": [],
-        "name": "status",
-        "outputs": [
-            {
-                "internalType": "string",
-                "name": "",
-                "type": "string"
-            }
-        ],
-        "payable": false,
-        "stateMutability": "view",
-        "type": "function"
-    },
-    {
-        "constant": true,
-        "inputs": [],
-        "name": "totalAmount",
-        "outputs": [
+        "inputs": [
             {
                 "internalType": "uint256",
-                "name": "",
+                "name": "_duration",
+                "type": "uint256"
+            },
+            {
+                "internalType": "uint256",
+                "name": "_goalAmount",
                 "type": "uint256"
             }
         ],
         "payable": false,
-        "stateMutability": "view",
-        "type": "function"
+        "stateMutability": "nonpayable",
+        "type": "constructor"
     }
 
 ];
 
-var contract_address = "0x0195FDA79B7F519A98110FeA17677EC8b3FEfcF1";
+var contract_address = "0x63c46C0B11a76C069Ca4e9fbF564cE5C2B329CF9";
 
 class Crowdfunding {
     constructor() {

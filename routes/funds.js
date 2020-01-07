@@ -1,9 +1,19 @@
 var fs = require('fs');
 var express = require('express');
 var router = express.Router();
-var crowdfunding = require('../libs/crowdFunding');
+var crowdFunding_1 = require('../libs/crowdFunding_1');
+var crowdFunding_2 = require('../libs/crowdFunding_2');
+var crowdFunding_3 = require('../libs/crowdFunding_3');
+var crowdFunding_4 = require('../libs/crowdFunding_4');
+var crowdFunding_5 = require('../libs/crowdFunding_5');
+var crowdFunding_6 = require('../libs/crowdFunding_6');
 
-const crowdFunding = new crowdfunding();
+const crowdFunding1 = new crowdFunding_1();
+const crowdFunding2 = new crowdFunding_2();
+const crowdFunding3 = new crowdFunding_3();
+const crowdFunding4 = new crowdFunding_4();
+const crowdFunding5 = new crowdFunding_5();
+const crowdFunding6 = new crowdFunding_6();
 
 var fund_list = [];
  
@@ -46,14 +56,64 @@ router.post('/adduser', function (req, res, next) {
  
 })
 
-router.get('/:index', async function(req, res, next){
-  const pageIndex = req.params.index;
-  const goalAmount = await crowdFunding.getGAmount();
-  const totalAmount = await crowdFunding.getTAmount();
-  const deadline = await crowdFunding.getDeadline();
+router.get('/1', async function(req, res, next){
+  const pageIndex = 1;
+  const goalAmount = await crowdFunding1.getGAmount();
+  const totalAmount = await crowdFunding1.getTAmount();
+  const deadline = await crowdFunding1.getDeadline();
 
   res.render('./detail/' + pageIndex, { fund_item: fund_list[pageIndex], index: pageIndex, deadline: deadline, totalAmount:totalAmount, goalAmount: goalAmount });
 
 })
- 
+
+router.get('/2', async function(req, res, next){
+  const pageIndex = 2;
+  const goalAmount = await crowdFunding2.getGAmount();
+  const totalAmount = await crowdFunding2.getTAmount();
+  const deadline = await crowdFunding2.getDeadline();
+
+  res.render('./detail/' + pageIndex, { fund_item: fund_list[pageIndex], index: pageIndex, deadline: deadline, totalAmount:totalAmount, goalAmount: goalAmount });
+
+})
+
+router.get('/3', async function(req, res, next){
+  const pageIndex = 3;
+  const goalAmount = await crowdFunding3.getGAmount();
+  const totalAmount = await crowdFunding3.getTAmount();
+  const deadline = await crowdFunding3.getDeadline();
+
+  res.render('./detail/' + pageIndex, { fund_item: fund_list[pageIndex], index: pageIndex, deadline: deadline, totalAmount:totalAmount, goalAmount: goalAmount });
+
+})
+
+router.get('/4', async function(req, res, next){
+  const pageIndex = 4;
+  const goalAmount = await crowdFunding4.getGAmount();
+  const totalAmount = await crowdFunding4.getTAmount();
+  const deadline = await crowdFunding4.getDeadline();
+
+  res.render('./detail/' + pageIndex, { fund_item: fund_list[pageIndex], index: pageIndex, deadline: deadline, totalAmount:totalAmount, goalAmount: goalAmount });
+
+})
+
+router.get('/5', async function(req, res, next){
+  const pageIndex = 5;
+  const goalAmount = await crowdFunding5.getGAmount();
+  const totalAmount = await crowdFunding5.getTAmount();
+  const deadline = await crowdFunding5.getDeadline();
+
+  res.render('./detail/' + pageIndex, { fund_item: fund_list[pageIndex], index: pageIndex, deadline: deadline, totalAmount:totalAmount, goalAmount: goalAmount });
+
+})
+
+router.get('/6', async function(req, res, next){
+  const pageIndex = 6;
+  const goalAmount = await crowdFunding6.getGAmount();
+  const totalAmount = await crowdFunding6.getTAmount();
+  const deadline = await crowdFunding6.getDeadline();
+
+  res.render('./detail/' + pageIndex, { fund_item: fund_list[pageIndex], index: pageIndex, deadline: deadline, totalAmount:totalAmount, goalAmount: goalAmount });
+
+})
+
 module.exports = router;

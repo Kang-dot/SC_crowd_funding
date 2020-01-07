@@ -202,16 +202,25 @@
     </div>
     <div class="col col-md-4">
       <ul class="list-group">
-        <li class="list-group-item">목표금액 : <%= fund_item.goalAmount %></li>
-        <li class="list-group-item">기간 : <%= fund_item.deadline %></li>
+        <li class="list-group-item">목표금액 : <%= goalAmount %></li>
+        <% var dd = new Date(parseInt(deadline));
+        var ddstr = `${dd.getFullYear()}년 ${dd.getMonth()}월 ${dd.getDate()}일`;
+
+        console.log(`${dd.getFullYear()}년 ${dd.getMonth()}월 ${dd.getDate()}일`);
+        
+        %>
+
+        <li class="list-group-item">기간 : <%= ddstr %></li>
         <button onclick="contribute();" class="btn btn-primary">후원하기</button>
 
       </ul>
       <div style="margin:40px"></div>
 
-      <h2>현재 모금액 : <%= fund_item.totalAmount %></h2>
+      <h2>현재 모금액 : <%= totalAmount %></h2>
       <div class="progress">
-        <div class="progress-bar" style="width:<%= fund_item.totalAmount/fund_item.goalAmount*100 %>"><%= fund_item.totalAmount/fund_item.goalAmount*100 %></div>
+        <div class="progress-bar" style="width:<%= totalAmount/goalAmount*100 %>%"
+          aria-valuenow="<%= totalAmount/goalAmount*100 %>" aria-valuemin="0" aria-valuemax="100">
+          <%= totalAmount/goalAmount*100 %>%</div>
       </div>
 
       <div>

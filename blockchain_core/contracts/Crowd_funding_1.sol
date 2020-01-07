@@ -1,6 +1,6 @@
 pragma solidity ^0.5.11;
 
-contract crowd_Funding {
+contract crowd_Funding_1 {
     struct Investor {
         address payable addr;
         uint amount;
@@ -32,20 +32,18 @@ contract crowd_Funding {
         totalAmount = 0;
     }
     
-    function fund() public payable returns(uint) {
+    function fund() public payable {
         require(!ended);
         
         Investor storage inv = investors[numInvestors++];
         inv.addr = msg.sender;
         inv.amount = msg.value;
         totalAmount += inv.amount;
-
-        return inv.amount;
     }
     
-    function checkGoalReached () public onlyOwner returns (string memory){
+    function checkGoalReached () public onlyOwner{
         require(!ended);
-        require(now>=deadline, "this funding is still progressing");
+        require(now>=deadline);
         
         if(totalAmount >= goalAmount) {
             status = "funding success. thank you guys!";
@@ -65,7 +63,6 @@ contract crowd_Funding {
                 i++;
             }
         }
-        return status;
     }
     
     function kill() public onlyOwner {
